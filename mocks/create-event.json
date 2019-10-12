@@ -1,5 +1,5 @@
 {
-  "body": "{\"content\":\"This is a post\",\"title\":\"Testing\"}",
+  "body": "{\"content\":\"This is a post\",\"title\":\"Testing\",\"posterEmail\":\"ender.666@live.com\"}",
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"
