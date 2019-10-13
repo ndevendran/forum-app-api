@@ -7,14 +7,13 @@ export async function main(event, context, callback) {
   const data = JSON.parse(event.body);
 
   const params = {
-    TableName: "forum",
+    TableName: process.env.tableName,
     Item: {
-      userId: event.requestContext.identity.cognitoIdentityId,
       postId: uuid.v1(),
       content: data.content,
       title: data.title,
       createdAt: Date.now(),
-      posterEmail: data.posterEmail,
+      posterUsername: data.posterUsername,
     }
   };
 

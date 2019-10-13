@@ -32,6 +32,8 @@ provider:
   # commit your env.yml.
   #
   #environment: ${file(env.yml):${self:provider.stage}}
+  environment:
+    tableName: userposts
 
 functions:
   create:

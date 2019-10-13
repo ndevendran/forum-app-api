@@ -4,9 +4,8 @@ import { success, failure } from "./libs/response-lib";
 export async function main(event, context) {
   const data = JSON.parse(event.body);
   const params = {
-    TableName: "forum",
+    TableName: process.env.tableName,
     Key: {
-      userId: event.requestContext.identity.cognitoIdentityId,
       postId: event.pathParameters.id
     },
     UpdateExpression: "SET content = :content, title = :title",

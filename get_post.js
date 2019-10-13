@@ -4,9 +4,8 @@ import {success, failure} from "./libs/response-lib";
 
 export async function main(event, context) {
   const params = {
-    TableName: "forum",
+    TableName: process.env.tableName,
     Key: {
-      userId: event.requestContext.identity.cognitoIdentityId,
       postId: event.pathParameters.id
     }
   };
@@ -21,6 +20,6 @@ export async function main(event, context) {
     }
   } catch (e) {
     console.log(e);
-    return failure({status: false});
+    return failure({status: false, error: e});
   }
 }
