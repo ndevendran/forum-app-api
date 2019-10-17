@@ -33,7 +33,8 @@ provider:
   #
   #environment: ${file(env.yml):${self:provider.stage}}
   environment:
-    tableName: userposts
+    tableNameUserPosts: userposts
+    tableNameComments: usercomments
 
 functions:
   create:
@@ -76,6 +77,31 @@ functions:
           method: delete
           cors: true
           authorizer: aws_iam
+  postComment:
+    handler: post_comment.main
+    events:
+      - http:
+          path: forum/{id}/comment
+          method: post
+          cors: true
+          authorizer: aws_iam
+  getComment:
+    handler: get_comment.main
+    events:
+      - http:
+          path: forum/{postId}/comment/{commentId}
+          method: post
+          cors: true
+          authorizer: aws_iam
+  listComments:
+    handler: list_comments.main
+    events:
+      - http:
+          path: forum/{postId}/comments
+          method: get
+          cors: true
+          authorizer: aws_iam
+
 
 resources:
   # API Gateway Errors
