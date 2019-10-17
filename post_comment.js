@@ -10,7 +10,7 @@ export async function main(event, context, callback) {
     TableName: process.env.tableNameComments,
     Item: {
       commentId: uuid.v1(),
-      postId: event.pathParameters.id,
+      postId: event.pathParameters.postId,
       content: data.content,
       username: data.username,
       createdAt: Date.now()

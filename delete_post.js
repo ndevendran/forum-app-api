@@ -6,7 +6,7 @@ export async function main(event, context) {
     TableName: "forum",
     Key: {
       userId: event.requestContext.identity.cognitoIdentityId,
-      postId: event.pathParameters.id
+      postId: event.pathParameters.postId
     }
   };
 

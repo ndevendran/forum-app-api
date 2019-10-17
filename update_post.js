@@ -6,7 +6,7 @@ export async function main(event, context) {
   const params = {
     TableName: process.env.tableNameUserPosts,
     Key: {
-      postId: event.pathParameters.id
+      postId: event.pathParameters.postId
     },
     UpdateExpression: "SET content = :content, title = :title",
     ExpressionAttributeValues: {

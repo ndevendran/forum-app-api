@@ -10,7 +10,7 @@ export async function main(event, context) {
         "#id": "postId"
       },
       ExpressionAttributeValues: {
-        ":idstring": event.pathParameters.id
+        ":idstring": event.pathParameters.postId
       }
   };
 

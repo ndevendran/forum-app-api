@@ -49,7 +49,7 @@ functions:
     handler: get_post.main
     events:
       - http:
-          path: forum/{id}
+          path: forum/{postId}
           method: get
           cors: true
           authorizer: aws_iam
@@ -65,7 +65,7 @@ functions:
     handler: update_post.main
     events:
       - http:
-          path: forum/{id}
+          path: forum/{postId}
           method: put
           cors: true
           authorizer: aws_iam
@@ -73,7 +73,7 @@ functions:
     handler: delete_post.main
     events:
       - http:
-          path: forum/{id}
+          path: forum/{postId}
           method: delete
           cors: true
           authorizer: aws_iam
@@ -81,7 +81,7 @@ functions:
     handler: post_comment.main
     events:
       - http:
-          path: forum/{id}/comment
+          path: comment/{postId}
           method: post
           cors: true
           authorizer: aws_iam
@@ -89,15 +89,15 @@ functions:
     handler: get_comment.main
     events:
       - http:
-          path: forum/{postId}/comment/{commentId}
-          method: post
+          path: comment/{postId}/{commentId}
+          method: get
           cors: true
           authorizer: aws_iam
   listComments:
     handler: list_comments.main
     events:
       - http:
-          path: forum/{postId}/comments
+          path: comment/{postId}
           method: get
           cors: true
           authorizer: aws_iam
