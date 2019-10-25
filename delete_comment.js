@@ -3,7 +3,7 @@ import { success, failure } from './libs/response-lib';
 
 
 export default main(event, context) {
-  params = {
+  const params = {
     Key: {
       commentId: event.pathParameters.commentId,
       postId: event.pathParameters.postId

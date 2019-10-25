@@ -109,14 +109,6 @@ functions:
           method: put
           cors: true
           authorizer: aws_iam
-  deleteComment:
-    handler: delete_comment.js
-    events:
-      - http:
-          path: comment/{postId}/{commentId}
-          method: delete
-          cors: true
-          authorizer: aws_iam
 
 resources:
   # API Gateway Errors
