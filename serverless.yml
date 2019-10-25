@@ -102,7 +102,7 @@ functions:
           cors: true
           authorizer: aws_iam
   updateComment:
-    handler: update_comment.js
+    handler: update_comment.main
     events:
       - http:
           path: comment/{postId}/{commentId}

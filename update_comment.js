@@ -3,7 +3,7 @@ import {success, failure} from './libs/response-lib';
 
 export async function main(event, context) {
   const data = JSON.parse(event.body);
-  params = {
+  const params = {
     TableName: process.env.tableNameComments,
     Key: {
       "postId": event.pathParameters.postId,
