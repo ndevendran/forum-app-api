@@ -35,6 +35,8 @@ provider:
   environment:
     tableNameUserPosts: userposts
     tableNameComments: usercomments
+    bucketName: niro-forum-user-uploads
+    avatarFileName: _user_avatar
 
 functions:
   create:
@@ -107,6 +109,14 @@ functions:
       - http:
           path: comment/{postId}/{commentId}
           method: put
+          cors: true
+          authorizer: aws_iam
+  uploadAvatar:
+    handler: upload_avatar.main
+    events:
+      - http:
+          path: avatar/upload
+          method: post
           cors: true
           authorizer: aws_iam
 
