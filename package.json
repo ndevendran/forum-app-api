@@ -18,6 +18,9 @@
     "serverless-offline": "^5.3.3"
   },
   "dependencies": {
+    "bluebird": "^3.7.1",
+    "node-fetch": "^2.6.0",
+    "require": "^2.4.20",
     "uuid": "^3.3.3"
   }
 }

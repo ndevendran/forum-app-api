@@ -28,21 +28,9 @@ provider:
       Resource: "arn:aws:dynamodb:us-east-1:*:*"
     - Effect: Allow
       Action:
-        - "s3:ListBucket"
-        Resource:
-          Fn::Join:
-            - ""
-            - - "arn:aws:s3:::"
-              - Ref: ServerlessDeploymentBucket
-    - Effect: Allow
-      Action:
-        - "s3:PutObject"
-      Resource:
-        Fn::Join:
-          - ""
-          - - "arn:aws:s3:::"
-            - Ref: ServerlessDeploymentBucket
-            - "/*"
+        - s3:ListBucket
+        - s3:PutObject
+      Resource: "arn:aws:s3:::niro-forum-user-uploads/*"
   # To load environment variables externally
   # rename env.example to env.yml and uncomment
   # the following line. Also, make sure to not
