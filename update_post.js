@@ -21,6 +21,6 @@ export async function main(event, context) {
     return success({ status: true, post: post });
   } catch (e) {
     console.log(e);
-    return failure({ status: false });
+    return failure({ status: false, error: e });
   }
 }

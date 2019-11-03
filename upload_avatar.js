@@ -16,7 +16,6 @@ export async function main(event, context, callback) {
   //Get user data from id token
   var decoded = jwt.decode(data.idToken);
   const storeKey = decoded['cognito:username'] + process.env.avatarFileName + '.' + ext;
-  const sub = decoded['sub'];
 
   //Set up bucket transfer
   const buffer = Buffer.from(fileData, 'base64');
