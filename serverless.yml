@@ -42,6 +42,7 @@ provider:
     tableNameComments: usercomments
     bucketName: niro-forum-user-uploads
     avatarFileName: _user_avatar
+    publicKeyURL: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_LBYlIME5a/.well-known/jwks.json
 
 functions:
   create:
