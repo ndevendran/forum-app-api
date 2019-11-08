@@ -1,6 +1,5 @@
 import * as dynamoDbLib from './libs/dynamodb-lib.js';
 import {success, failure} from './libs/response-lib';
-import * as authLib from './libs/auth-lib.js';
 
 export async function main(event, context) {
   const data = JSON.parse(event.body);

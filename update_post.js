@@ -56,6 +56,11 @@ function handleErrors(error) {
 
 
 export async function main(event, context) {
+  const data = JSON.parse(event.body);
+  if(data.idToken == null) {
+    return failure({status: false, error: "Please login..."});
+  }
+
   var authorized = await authorizeEdit(event);
   var verified   = await authLib.verifyToken(event);
   var response = null;
