@@ -40,6 +40,7 @@ provider:
   environment:
     tableNameUserPosts: userposts
     tableNameComments: usercomments
+    tableNameUserLikes: userlikes
     bucketName: niro-forum-user-uploads
     avatarFileName: _user_avatar
 
@@ -121,6 +122,14 @@ functions:
     events:
       - http:
           path: avatar/upload
+          method: post
+          cors: true
+          authorizer: aws_iam
+  likePost:
+    handler: like_post.main
+    events:
+      - http:
+          path: like/{postId}
           method: post
           cors: true
           authorizer: aws_iam
