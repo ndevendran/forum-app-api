@@ -40,7 +40,8 @@ provider:
   environment:
     tableNameUserPosts: userposts
     tableNameComments: usercomments
-    tableNameUserLikes: userlikes
+    tableNameCommentLikes: commentLikes
+    tableNamePostLikes: userlikes
     bucketName: niro-forum-user-uploads
     avatarFileName: _user_avatar
 
@@ -133,6 +134,31 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  likeComment:
+      handler: like_comment.main
+      events:
+        - http:
+            path: like/{postId}/{commentId}
+            method: post
+            cors: true
+            authorizer: aws_iam
+  getPostLikes:
+    handler: get_post_likes.main
+    events:
+      - http:
+          path: like/{postId}
+          method: get
+          cors: true
+          authorizer: aws_iam
+  getCommentLikes:
+    handler: get_comment_likes.main
+    events:
+      - http:
+          path: like/{postId}/{commentId}
+          method: get
+          cors: true
+          authorizer: aws_iam
+
 
 resources:
   # API Gateway Errors

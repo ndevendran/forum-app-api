@@ -6,7 +6,7 @@ export async function main(event, context, callback) {
   const data = JSON.parse(event.body);
 
   const getParams = {
-    TableName: process.env.tableNameUserLikes,
+    TableName: process.env.tableNamePostLikes,
     Key: {
       postId: event.pathParameters.postId,
       username: data.username
@@ -14,7 +14,7 @@ export async function main(event, context, callback) {
   };
 
   const putParams = {
-    TableName: process.env.tableNameUserLikes,
+    TableName: process.env.tableNamePostLikes,
     Item: {
       postId: event.pathParameters.postId,
       username: data.username,
