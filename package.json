@@ -27,7 +27,7 @@
     "jsonwebtoken": "^8.5.1",
     "jwk-to-pem": "^2.0.1",
     "kind-of": "^6.0.3",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "node-fetch": "^2.6.0",
     "require": "^2.4.20",
     "serialize-javascript": "^4.0.0",
