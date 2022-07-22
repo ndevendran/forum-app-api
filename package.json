@@ -21,7 +21,7 @@
   "dependencies": {
     "acorn": "^7.3.1",
     "bluebird": "^3.7.1",
-    "file-type": "^12.3.1",
+    "file-type": "^16.5.4",
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "jsonwebtoken": "^8.5.1",
